@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6" *ngFor="let item of items;">
+            <div class="card">
+                <button type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="card-body">
+                    <h5 class="card-title">{{item.name}}</h5>
+                    <h6 class="card-subtitle ">{{item.price}}</h6>
+                    <p class="card-text">{{item.info}}</p>
+                    <a (click)="toggleInfo($event)" class="info">
+                        <span class="show-btn">Show review</span>
+                        <span class="hidden-btn">Hide review</span>
+                        <div class="content" *ngFor="let itemReview of item.review; let i = index">
+                            <h6 class="card-title">{{itemReview.name}}</h6>
+                            <p class="card-text">{{itemReview.text}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-info" *ngIf="!items.length">No find post!</div>
+    </div>
+</div>
