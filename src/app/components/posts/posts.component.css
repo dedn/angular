@@ -1,31 +1,4 @@
-.content {
-    display: none;
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #ccc;
-}
 
-.hidden-btn {
-    display: none;
-}
-
-.visible .content {
-    display: block;
-}
-
-.visible .hidden-btn {
-    display: block;
-}
-
-.visible .show-btn {
-    display: none;
-}
-
-.show-btn, .hidden-btn {
-    margin-bottom: 10px;
-    cursor: pointer;
-    opacity: .6;
-}
 
 button.close {
     width: 40px;
