@@ -63,7 +63,7 @@ export class UserListComponent implements OnInit {
 
     }
 
-    onSubmit(form) {
+    onSubmit(form): void {
         if (form.invalid) return;
         const newItem: UserModel = {
             name: this.item.name,
