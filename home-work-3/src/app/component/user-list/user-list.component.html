@@ -1,0 +1,119 @@
+<div class="container">
+    <div class="card mb-3">
+        <div class="card-body">
+            <form novalidate (ngSubmit)="onSubmit(form)" #form="ngForm">
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input id="name"
+                           class="form-control"
+                           type="text"
+                           [(ngModel)]="item.name"
+                           name="name"
+                           #itemName="ngModel"
+                           required
+                           [ngClass]="{'is-invalid' : itemName.errors && itemName.dirty && itemName.touched }"
+                           minlength="2"
+                           maxlength="10"
+                    >
+                    <div [hidden]="!itemName.errors?.required" class="invalid-feedback">Item name required</div>
+                    <div [hidden]="!itemName.errors?.minlength" class="invalid-feedback">Item name mast be at least 2
+                        charts
+                    </div>
+                    <div [hidden]="!itemName.errors?.maxlength" class="invalid-feedback">Item name mast be at more 10
+                        charts
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email"
+                           class="form-control"
+                           [ngClass]="{'is-invalid' : itemEmail.errors && itemEmail.dirty && itemEmail.touched }"
+                           type="text"
+                           [(ngModel)]="item.email"
+                           name="email"
+                           #itemEmail="ngModel"
+                           required
+                           [pattern]="emailPattern"
+
+                    >
+                    <div [hidden]="!itemEmail.errors?.required" class="invalid-feedback">Email required.</div>
+                    <div [hidden]="!itemEmail.errors?.pattern" class="invalid-feedback">Email not valid</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input id="age"
+                           class="form-control"
+                           type="text"
+                           [(ngModel)]="item.age"
+                           name="age"
+                           #itemAge="ngModel"
+                           pattern="[0-9]{0,3}$"
+                           [ngClass]="{'is-invalid' : itemAge.errors && itemAge.dirty && itemAge.touched }"
+                    >
+                    <div [hidden]="!itemAge.errors?.pattern" class="invalid-feedback">Not valid</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="PhoneNumber">Phone Number</label>
+                    <input id="PhoneNumber"
+                           class="form-control"
+                           type="text"
+                           [(ngModel)]="item.phoneNumber"
+                           name="phoneNumber"
+                           required
+                           #itemNumber="ngModel"
+                           pattern="[0-9]{0,10}$"
+                           [ngClass]="{'is-invalid' : itemNumber.errors && itemNumber.dirty && itemNumber.touched }"
+                    >
+                    <div [hidden]="!itemNumber.errors?.required" class="invalid-feedback">Phone number required.</div>
+                    <div [hidden]="!itemNumber.errors?.pattern" class="invalid-feedback">Phone number not valid</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Comment</label>
+                    <textarea class="form-control"
+                              name="comment"
+                              [(ngModel)]="item.comment"
+                              required
+                              #itemComment="ngModel"
+                              [ngClass]="{'is-invalid' : itemComment.errors && itemComment.dirty && itemComment.touched }"
+                              minlength="3"
+                              maxlength="100"
+                    >
+
+                    </textarea>
+                    <div [hidden]="!itemComment.errors?.minlength" class="invalid-feedback">Item name mast be at least 3
+                        charts
+                    </div>
+                    <div [hidden]="!itemComment.errors?.maxlength" class="invalid-feedback">Item name mast be at more
+                        100 charts
+                    </div>
+                </div>
+
+                <button type="submit" [disabled]="form.invalid" class="btn-primary">Add</button>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 mb-3" *ngFor="let item of userList; let i = index">
+            <div class="card">
+                <button (click)="deleteProduct(i)" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="card-body">
+                    <p class="card-text"> № {{i}}</p>
+                    <h5 class="card-title">{{item.name}}</h5>
+                    <h6 class="card-subtitle ">{{item.email}}</h6>
+                    <h6 class="card-subtitle ">{{item.age}}</h6>
+                    <h6 class="card-subtitle ">{{item.phoneNumber}}</h6>
+                    <p class="card-text">{{item.comment}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
