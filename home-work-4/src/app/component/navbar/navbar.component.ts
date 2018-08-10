@@ -7,11 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-
-  brand: string = 'Home Work 4'
+  brand: string = 'Home Work 4';
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

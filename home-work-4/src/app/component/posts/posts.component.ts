@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {Post} from "../../models/post";
-import {PostService} from "../../services/post.service";
-import {ToastrService} from "ngx-toastr";
-import {NgxSpinnerService} from "ngx-spinner";
-import {CommentsServices} from "../../services/comments.services";
-import {Comment} from "../../models/comment";
+import { Component, OnInit } from '@angular/core';
+import { Post } from '../../models/post';
+import { PostService } from '../../services/post.service';
+import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { CommentsServices } from "../../services/comments.services';
+import { Comment } from '../../models/comment';
 
 @Component({
     selector: 'app-posts',
@@ -39,7 +39,6 @@ export class PostsComponent implements OnInit {
         )
     }
 
-
     onDelete (id: number) {
         this.spinner.show();
         this.postServices.deletePost(id).subscribe((data: Object) => {
@@ -53,7 +52,6 @@ export class PostsComponent implements OnInit {
             },
         )
     }
-
 
     onAddPost () {
         this.spinner.show();
