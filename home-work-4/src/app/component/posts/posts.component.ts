@@ -40,6 +40,7 @@ export class PostsComponent implements OnInit {
     }
 
     onDelete (id: number) {
+        console.log(id)
         this.spinner.show();
         this.postServices.deletePost(id).subscribe((data: Object) => {
                 this.posts = this.posts.filter(post => post.id != id);

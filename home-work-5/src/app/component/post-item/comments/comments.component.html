@@ -1,0 +1,6 @@
+<ul>
+    <li *ngIf="postItem.id == comment.postId && postItem.reviewShow" class="content">
+        <h6 class="card-title">{{comment.email}}</h6>
+        <p class="card-text">{{comment.body}}</p>
+    </li>
+</ul>

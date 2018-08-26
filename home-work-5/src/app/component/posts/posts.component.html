@@ -1,0 +1,24 @@
+<div class="container mt-5">
+
+    <ngx-spinner
+            bdColor="rgba(51,51,51,0.8)"
+            size="medium"
+            color="#fff"
+            type="ball-scale-multiple">
+        <p style="font-size: 20px; color: white">Loading...</p>
+    </ngx-spinner>
+
+    <div class="row">
+
+        <app-add-new-post class=" col col-6 mb-3" (addNewPost)="onAddPost($event)" (editPost)="onEditPost($event)" ></app-add-new-post>
+
+
+    </div>
+
+    <div class="row">
+        <app-post-item class="col col-6 mb-3" *ngFor="let post of posts; let i = index"
+           [post]="post"
+                       (deletePost)="onDelete($event)"
+        ></app-post-item>
+    </div>
+</div>

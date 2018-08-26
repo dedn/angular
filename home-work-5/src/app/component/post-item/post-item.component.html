@@ -1,0 +1,17 @@
+<div class="card" [ngClass]="{'bg-secondary': editPostId === postItem.id } ">
+    <div class="card-body">
+        <h5 class="card-title">{{postItem.title}}</h5>
+        <p class="card-text">{{postItem.body}}</p>
+        <button class="btn btn-danger mr-3" *ngIf="!isAdmin" (click)="onDelete(postItem.id)">Delete</button>
+        <button class="btn btn-warning" (click)="onEdit(postItem)" *ngIf="!editPostId">Edit</button>
+        <button class="btn btn-warning" (click)="onCansel()" *ngIf="editPostId">Cansel</button>
+        <button class="btn btn-primary" (click)="onShowComment(postItem.id); postItem.reviewShow =!postItem.reviewShow">
+            Show Comment
+        </button>
+        <app-comments
+                class="mt-3" *ngFor="let comment of comments;"
+                [comment]="comment"
+                [postItem]="postItem"
+        ></app-comments>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<h4 class="card-title">{{ formData.id ? 'Edit Post' : 'Add Post'}}</h4>
+<form novalidate #form="ngForm">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text"
+               id="title"
+               class="form-control"
+               required
+               [(ngModel)]="formData.title"
+               name="title"
+               [ngClass]="{'is-invalid' : itemName.errors && itemName.dirty && itemName.touched }"
+               minlength="2"
+               maxlength="200"
+               #itemName="ngModel"
+        >
+
+        <div [hidden]="!itemName.errors?.required" class="invalid-feedback">Item name required</div>
+        <div [hidden]="!itemName.errors?.minlength" class="invalid-feedback">Item name mast be at least 2
+            charts
+        </div>
+        <div [hidden]="!itemName.errors?.maxlength" class="invalid-feedback">Item name mast be at more 10
+            charts
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="body"> Text</label>
+        <input type="text"
+               id="body"
+               class="form-control"
+               required [(ngModel)]="formData.body"
+               name="body"
+               [ngClass]="{'is-invalid' : itemBody.errors && itemBody.dirty && itemBody.touched }"
+               minlength="2"
+               maxlength="200"
+               #itemBody="ngModel"
+        >
+
+        <div [hidden]="!itemBody.errors?.required" class="invalid-feedback">Item name required</div>
+        <div [hidden]="!itemBody.errors?.minlength" class="invalid-feedback">Item name mast be at least 2
+            charts
+        </div>
+        <div [hidden]="!itemBody.errors?.maxlength" class="invalid-feedback">Item name mast be at more 10
+            charts
+        </div>
+    </div>
+    <button *ngIf="!formData.id" [disabled]="form.invalid" (click)="onAddPost()" class="btn btn-primary">Add new post
+    </button>
+    <button *ngIf="formData.id" class="btn btn-primary" (click)="onEditPost()" [disabled]="form.invalid">Edit Post
+    </button>
+    <button *ngIf="formData.id" (click)="onCansel()" class="btn btn-primary">Cansel</button>
+</form>
