@@ -1,27 +1,26 @@
-# RoutingHomeWork
+# HOME WORK 6
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Домашнее задание
 
-## Code scaffolding
+###### 1.На главной странице вывести все todos
+###### 2.Реализовать редактирование todo на отдельной странице
+###### 3.реализовать удаление todo
+###### 4.реализовать добавление нового todo на отдельной странице
+###### 5.После успешного добавления или редактирования должно редиректить на страницу home и выводиться уведомление об успешном редактировании/добавлении
+###### 6.также на каждой странице пока мы ждем инфу нужно выводить спинер
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Домашнее задание
 
-## Build
+1. На главной странице вывести все todos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+2. Реализовать редактирование todo на отдельной странице
 
-## Running unit tests
+3. реализовать удаление todo
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. реализовать добавление нового todo на отдельной странице
 
-## Running end-to-end tests
+5. После успешного добавления или редактирования должно редиректить на страницу home и выводиться уведомление об успешном редактировании/добавлении
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+6. также на каждой странице пока мы ждем инфу нужно выводить спинер
